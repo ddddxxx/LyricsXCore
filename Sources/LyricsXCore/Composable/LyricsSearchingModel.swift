@@ -24,11 +24,7 @@ public struct LyricsSearchingState: Equatable {
     
     private mutating func setSearchTerm(_ term: LyricsSearchRequest.SearchTerm) -> LyricsSearchRequest {
         searchTerm = term
-        return LyricsSearchRequest(
-            searchTerm: term,
-            title: track.title ?? "",
-            artist: track.artist ?? "",
-            duration: track.duration ?? 0)
+        return LyricsSearchRequest(searchTerm: term, duration: track.duration ?? 0)
     }
     
     private mutating func clearPreviousSearch() {
